@@ -48,7 +48,7 @@ public class ScoreDataBaseHandler extends SQLiteOpenHelper {
             + COLUMN_SCORE + " INTEGER, "
             + COLUMN_TIME + " INTEGER,"
             + COLUMN_DATETIME + " TEXT,"
-            + COLUMN_STARS + "INTEGER"
+            + COLUMN_STARS + " INTEGER"
             + ");";
 
     private static ScoreDataBaseHandler mInstance;
@@ -120,6 +120,7 @@ public class ScoreDataBaseHandler extends SQLiteOpenHelper {
         Log.i(TAG, "dbToString()");
         SQLiteDatabase db = getWritableDatabase();
         String query = "SELECT * FROM " + TABLE_ALL + " WHERE 1 ;";
+        Log.i(TAG, "query: " + query);
         Cursor c = db.rawQuery(query,null);
         c.moveToFirst();
         String temp="";

@@ -43,6 +43,7 @@ public class MenuFragment extends Fragment {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        MainActivity.backgroundWhite();
                         Shared.eventBus.notify(new ViewDataAnalysisEvent());
 
                     }

@@ -25,32 +25,32 @@ public class DifficultySelectFragment extends Fragment {
         Theme theme = Shared.engine.getSelectedTheme();
 
         DifficultyView difficulty1 = (DifficultyView) view.findViewById(R.id.select_difficulty_1);
-        difficulty1.setDifficulty(1, 0);
+        difficulty1.setDifficulty(1, Memory.getHighStars(theme.id, 1));
         setOnClick(difficulty1, 1);
 
         DifficultyView difficulty2 = (DifficultyView) view.findViewById(R.id.select_difficulty_2);
-        //difficulty2.setDifficulty(2, Memory.getHighStars(theme.id, 2));
-        difficulty2.setDifficulty(2,0);
+        difficulty2.setDifficulty(2, Memory.getHighStars(theme.id, 2));
+        //difficulty2.setDifficulty(2,0);
         setOnClick(difficulty2, 2);
 
         DifficultyView difficulty3 = (DifficultyView) view.findViewById(R.id.select_difficulty_3);
-        //difficulty3.setDifficulty(3, Memory.getHighStars(theme.id, 3));
-        difficulty3.setDifficulty(3,0);
+        difficulty3.setDifficulty(3, Memory.getHighStars(theme.id, 3));
+        //difficulty3.setDifficulty(3,0);
         setOnClick(difficulty3, 3);
 
         DifficultyView difficulty4 = (DifficultyView) view.findViewById(R.id.select_difficulty_4);
-        //difficulty4.setDifficulty(4, Memory.getHighStars(theme.id, 4));
-        difficulty4.setDifficulty(4,0);
+        difficulty4.setDifficulty(4, Memory.getHighStars(theme.id, 4));
+        //difficulty4.setDifficulty(4,0);
         setOnClick(difficulty4, 4);
 
         DifficultyView difficulty5 = (DifficultyView) view.findViewById(R.id.select_difficulty_5);
-        //difficulty5.setDifficulty(5, Memory.getHighStars(theme.id, 5));
-        difficulty5.setDifficulty(5,0);
+        difficulty5.setDifficulty(5, Memory.getHighStars(theme.id, 5));
+        //difficulty5.setDifficulty(5,0);
         setOnClick(difficulty5, 5);
 
         DifficultyView difficulty6 = (DifficultyView) view.findViewById(R.id.select_difficulty_6);
-        //difficulty6.setDifficulty(6, Memory.getHighStars(theme.id, 6));
-        difficulty6.setDifficulty(6,0);
+        difficulty6.setDifficulty(6, Memory.getHighStars(theme.id, 6));
+        //difficulty6.setDifficulty(6,0);
         setOnClick(difficulty6, 6);
 
         animate(difficulty1, difficulty2, difficulty3, difficulty4, difficulty5, difficulty6);

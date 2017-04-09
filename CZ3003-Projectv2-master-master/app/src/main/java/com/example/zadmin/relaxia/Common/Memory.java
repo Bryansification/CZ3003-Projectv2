@@ -35,6 +35,7 @@ public class Memory {
     //If i want the database to keep track of how they play the game...i need to store a record everytime the game is completed.
     //I can store it using theme and difficulty level too for memory game.
     public static void save(int theme, int difficulty, int stars, int score, int time) {
+        dbHandler = ScoreDataBaseHandler.getInstance(Shared.context);
         int highStars = getHighStars(theme, difficulty);
         if (stars > highStars) {
             SharedPreferences sharedPreferences = Shared.context.getSharedPreferences(SHARED_PREFERENCES_NAME, Context.MODE_PRIVATE);
@@ -52,7 +53,7 @@ public class Memory {
         else if(theme == 2){
             game_type = ScoreDataBaseHandler.MEMORY_GAME_MONSTERS;
         }
-        dbHandler = ScoreDataBaseHandler.getInstance(Shared.context);
+
         dbHandler.insertIntoTable(game_type, difficulty, score, time, dateTimeString, stars);
         dbHandler.dbToString();
     }

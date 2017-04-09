@@ -347,6 +347,10 @@ public class Engine implements EventObserverMemoryGame, EventObserverViewDataAna
             Log.i(TAG, " new ViewDataAnalysisEvent");
             onEvent(new ViewDataAnalysisEvent());
         }
+        else if(event instanceof BackGameEvent){
+            Log.i(TAG, "BACK GAME EVENT");
+            onEvent(new BackGameEvent());
+        }
     }
 
 

@@ -18,13 +18,13 @@ import static com.example.zadmin.relaxia.Common.Shared.context;
 
 public class MainActivity extends FragmentActivity {
 
-    private ImageView mBackgroundImage;
+    private static ImageView mBackgroundImage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        this.deleteDatabase(ScoreDataBaseHandler.DATABASE_NAME);
+        //this.deleteDatabase(ScoreDataBaseHandler.DATABASE_NAME);
         context = getApplicationContext();
         Shared.engine = Engine.getInstance();
         Shared.eventBus = EventBus.getInstance();
@@ -38,7 +38,7 @@ public class MainActivity extends FragmentActivity {
 
 
         // set background
-        //setBackgroundImage();
+        setBackgroundImage();
 
         // set menu
         ScreenController.getInstance().openScreen(ScreenController.Screen.MAIN_MENU);
@@ -68,4 +68,13 @@ public class MainActivity extends FragmentActivity {
         bitmap = Utils.downscaleBitmap(bitmap, 2);
         mBackgroundImage.setImageBitmap(bitmap);
     }
+
+    public static void backgroundWhite(){
+        Bitmap bitmap = Utils.scaleDown(R.drawable.background_white, Utils.screenWidth(), Utils.screenHeight());
+        bitmap = Utils.crop(bitmap, Utils.screenHeight(), Utils.screenWidth());
+        bitmap = Utils.downscaleBitmap(bitmap, 2);
+        mBackgroundImage.setImageBitmap(bitmap);
+    }
+
+
 }
